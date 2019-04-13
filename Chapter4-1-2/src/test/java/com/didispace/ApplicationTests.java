@@ -1,5 +1,6 @@
 package com.didispace;
 
+import com.didispace.async.MyTestService;
 import com.didispace.async.Task;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,9 @@ public class ApplicationTests {
 
 	@Autowired
 	private Task task;
+
+	@Autowired
+	private MyTestService myTestService;
 
 	@Test
 	public void test() throws Exception {
@@ -39,5 +43,10 @@ public class ApplicationTests {
 		System.out.println("任务全部完成，总耗时：" + (end - start) + "毫秒");
 
 	}
+	@Test
+	public void test1() throws Exception {
+		myTestService.openLoanService();
+	}
+
 
 }
